@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\registeretudiant;
 use Illuminate\Support\Facades\Auth; 
@@ -43,3 +44,15 @@ Route::get('/masters', [MasterController::class, 'index']);
 Route::post('/addmaster', [MasterController::class, 'store']);
 
 Route::get('/postuler/{id}', [MasterController::class, 'get']);
+Route::post('/postuler', [ApplicationController::class, 'store']);
+Route::get('/mescondidatures', [ApplicationController::class, 'mesapp']);
+Route::get('/listcandidatures', [ApplicationController::class, 'listcandidatures']);
+
+Route::get('/affichercandidature/{id}', [ApplicationController::class, 'affichercandidature']);
+
+
+Route::get('accepter/{id}', [ApplicationController::class, 'accepter'])->name('candidature.accepter');
+Route::get('refuser/{id}', [ApplicationController::class, 'refuser'])->name('candidature.refuser');
+
+
+

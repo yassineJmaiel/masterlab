@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\application;
+use Illuminate\Support\Facades\Auth;
 class ApplicationController extends Controller
 {
     
@@ -50,4 +51,66 @@ public function store(Request $request)
 
     return redirect()->back()->with('success', 'Votre candidature a été enregistrée.');
 }
+
+public function mesapp(){
+
+$candidatures=application::where('user_id',auth::user()->id)->get();
+
+return view('mescondidatures',compact('candidatures'));
+
+}
+
+public function listcandidatures(){
+
+    $candidatures=application::all();
+    
+    return view('listcandidatures',compact('candidatures'));
+    
+    }
+    public function affichercandidature($id)
+    {
+        $candidature = application::findOrFail($id);
+    
+        $MG1 = floatval(str_replace(',', '.', $candidature->moyenne_annee_1));
+        $MG2 = floatval(str_replace(',', '.', $candidature->moyenne_annee_2));
+        $MG3 = floatval(str_replace(',', '.', $candidature->moyenne_annee_3));
+    
+        $NC = 0;
+        $NP = 0;
+        foreach (['session_annee_1', 'session_annee_2', 'session_annee_3'] as $session) {
+            if ($candidature->$session === 'Principale') {
+                $NP++;
+            } elseif ($candidature->$session === 'Controle') {
+                $NC++;
+            }
+        }
+    
+        $NR = $candidature->redoublement ?? 0;
+    
+        $average = ($MG1 + $MG2 + $MG3) / 3;
+        $score = number_format($average + $NP - $NC - $NR, 2);
+    
+        return view('detailscandidature', compact('candidature', 'score'));
+    }
+    
+
+public function accepter($id)
+{
+    $candidature = application::find($id);
+    $candidature->statut = 'acceptée';
+    $candidature->save();
+
+    return redirect()->back()->with('success', 'Candidature acceptée avec succès.');
+}
+
+public function refuser($id)
+{
+    $candidature = application::find($id);
+    $candidature->statut = 'refusée';
+    $candidature->save();
+
+    return redirect()->back()->with('success', 'Candidature refusée avec succès.');
+}
+
+
 }

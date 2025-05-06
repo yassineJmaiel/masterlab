@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string('note_pfe');
             $table->integer('redoublement')->nullable();
             $table->integer('annees_blanches')->nullable();
+            $table->string('statut')->default("en cours de vérification");
+
             $table->timestamps();
         });
     }

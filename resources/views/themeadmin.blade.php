@@ -29,8 +29,30 @@
     <link rel="stylesheet" href="/assets2/css/jquery-jvectormap-2.0.5.css">
     <!-- Main css -->
     <link rel="stylesheet" href="/assets2/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <style>
+        .toast-middle-center {
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            z-index: 9999;
+        }
+    </style>
 </head> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <body>
+    
+    <script>
+        @if(session('success'))
+            toastr.options = {
+                "positionClass": "toast-middle-center",
+                "timeOut": "3000"
+            };
+            toastr.success("{{ session('success') }}");
+        @endif
+    </script>
     
 <!--==================== Preloader Start ====================-->
   <div class="preloader">
@@ -75,10 +97,22 @@
                         <li class="sidebar-submenu__item">
                             <a href="/ajouter-master" class="sidebar-submenu__link"> ajouter master </a>
                         </li>
+
+                        <li class="sidebar-submenu__item">
+                            <a href="/listcandidatures" class="sidebar-submenu__link">list candidatures </a>
+                        </li>
                         @endif
+
                         <li class="sidebar-submenu__item">
                             <a href="/masters" class="sidebar-submenu__link"> liste des masters </a>
                         </li>
+                        @if(Auth::user()->role<>"admin")
+                        <li class="sidebar-submenu__item">
+                            <a href="/mescondidatures" class="sidebar-submenu__link"> mes candidatures </a>
+                        </li>
+                        @endif
+
+
                         
                     </ul>
                     <!-- Submenu End -->
@@ -181,7 +215,7 @@
                         <span class="alarm-notify position-absolute end-0"></span>
                     </span>
                 </button>
-                <div class="dropdown-menu dropdown-menu--lg border-0 bg-transparent p-0">
+               {{--  <div class="dropdown-menu dropdown-menu--lg border-0 bg-transparent p-0">
                     <div class="card border border-gray-100 rounded-12 box-shadow-custom p-0 overflow-hidden">
                         <div class="card-body p-0">
                             <div class="py-8 px-24 bg-main-600">
@@ -258,12 +292,12 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!-- Notification Start -->
             
             <!-- Language Start -->
-            <div class="dropdown">
+            {{-- <div class="dropdown">
                 <button class="text-gray-500 w-40 h-40 bg-main-50 hover-bg-main-100 transition-2 rounded-circle text-xl flex-center" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="ph ph-globe"></i>
                 </button>
@@ -311,7 +345,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- Language Start -->
         </div>
 

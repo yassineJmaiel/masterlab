@@ -11,14 +11,12 @@
         </div>
 
         <div class="card-body">
-            <form action="" method="POST">
+            <form action="/postuler" method="POST">
                 @csrf
 
                 <input type="hidden" name="master_id" value="{{ $master->id }}">
 
-                <div class="mb-3">
-                    <span>N° Dossier : Test</span>
-                </div>
+                
 
                 <div class="row mb-3">
                     <div class="col-md-6">
