@@ -1,133 +1,838 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html class="no-js" lang="zxx">
 
-        <title>Laravel</title>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>MasterLab </title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.jpg">
+   <!-- CSS here -->
+   <link rel="stylesheet" href="assets/css/preloader.css">
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" href="assets/css/meanmenu.css">
+   <link rel="stylesheet" href="assets/css/animate.min.css">
+   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
+   <link rel="stylesheet" href="assets/css/backToTop.css">
+   <link rel="stylesheet" href="assets/css/magnific-popup.css">
+   <link rel="stylesheet" href="assets/css/huicalendar.css">
+   <link rel="stylesheet" href="assets/css/nice-select.css">
+   <link rel="stylesheet" href="assets/css/fontAwesome5Pro.css">
+   <link rel="stylesheet" href="assets/css/flaticon.css">
+   <link rel="stylesheet" href="assets/css/default.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<body>
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+   <!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+   <!-- Add your site or application content here -->
+
+   <!-- pre loader area start -->
+   <div id="loading">
+      <div id="loading-center">
+         <div id="loading-center-absolute">
+            <div class="loading-icon text-center d-flex flex-column align-items-center justify-content-center">
+               <img src="assets/img/logo/logo-text.png" alt="logo-img">
+               <img class="loading-logo" src="assets/img/logo/preloader.svg" alt="">
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- pre loader area end -->
+
+   <!-- cart mini area start -->
+ 
+   <div class="body-overlay"></div>
+   <!-- cart mini area end -->
+
+   <!-- side toggle start -->
+   <div class="fix">
+      <div class="side-info">
+         <div class="side-info-content">
+            <div class="offset-widget offset-logo mb-40">
+               <div class="row align-items-center">
+                  <div class="col-9">
+                     <a href="index.html">
+                        <img src="assets/img/logopng.png" alt="Logo">
+                     </a>
+                  </div>
+                  <div class="col-3 text-end"><button class="side-info-close"><i class="fal fa-times"></i></button>
+                  </div>
+               </div>
+            </div>
+            <div class="mobile-menu d-xl-none fix"></div>
+            <div class="offset-widget offset_searchbar mb-30">
+               <div class="menu-search position-relative ">
+                  <form action="#" class="filter-search-input">
+                     <input type="text" placeholder="Search keyword">
+                     <button><i class="fal fa-search"></i></button>
+                  </form>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+   <div class="offcanvas-overlay"></div>
+   <div class="offcanvas-overlay-white"></div>
+   <!-- side toggle end -->
+
+
+  
+   <!-- header note area end -->
+
+   <!-- header-area-start  -->
+   <header>
+      <div class="header-area header-transparent sticky-header" style="    background-color: #f7f7f7b8;">
+         <div class="container-fluid">
+            <div class="header-main-wrapper">
+               <div class="row align-items-center">
+                  <div class="col-xl-7 col-lg-7 col-md-5 col-sm-9 col-9">
+                     <div class="header-left d-flex align-items-center">
+                        <div class="header-logo">
+                           <a href="index.html"><img src="assets/img/logo.jpg" alt="logo" style="width: 50%; margin-bottom: 14%;"></a>
+                        </div>
+                     
+                        <div class="main-menu d-none d-xl-block">
+                           <nav id="mobile-menu">
+                              <ul>
+                                 <li><a href="index.html">Acceuil</a> </li>
+
+                                 <li><a href="index.html">a propos de nous</a> </li>
+
+                                   
+                                 
+                                 <li ><a href="#masters">Programe master</a> </li>
+                                    
+                              
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-5 col-lg-5 col-md-7 col-sm-3 col-3">
+                     <div class="header-right d-flex align-items-center justify-content-end">
+                     
+                        
+                     
+                        <div class="d-none d-md-block me-2">
+                           <a class="user-btn-sign-up edu-btn" href="#inscription">S'inscrire</a>
+                        </div>
+                        <div class="d-none d-md-block">
+                           <a class="user-btn-sign-up edu-btn" href="/login">Se connecter</a>
+                        </div>
+                        <div class="menu-bar d-xl-none ml-20">
+                           <a class="side-toggle" href="javascript:void(0)">
+                              <div class="bar-icon">
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                              </div>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </header>
+   <!-- header-area-end -->
+
+   <main>
+      <!-- hero-area-sart -->
+      <section class="slider-area hero-height position-relative fix" data-background="assets/img/slider/finalslide.png" style="background-repeat: repeat-y;">
+         <img class="shape-3 d-none d-xxl-block" src="assets/img/shape/shape-03.png" alt="image not found">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-6 col-lg-6 col-md-6">
+                  <div class="hero-text pt-95">
+                     <h3 class="down-mark-line" style="color: #19487e;">MasterLab</h3>
+                     <h2>Préparez votre avenir dès aujourd'hui — Découvrez nos programmes de Master d’excellence adaptés à vos ambitions</h2>
+                     
+                     <div class="hero-btn">
+                        <a class="edu-btn" href="#masters">Voir les Masters Disponibles</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-6">
+                  <div class="hero-right position-relative">
+                     <img data-depth="0.2" class="shape shape-1" src="assets/img/shape/shape-01.png" alt="shape">
+                     <img class="shape-6" src="assets/img/shape/slider-shape-6.png" alt="shape">
+                     <div class="shape-4">
+                        <img class="" src="assets/img/shape/shape-04.png" alt="shape">
+                        <h5 class="hero-shape-text">
+                          Masters Certifié </h5>
+                     </div>
+                     <div class="shape-5">
+                        <div class="course-card">
+                           <img src="assets/img/shape/slider-card-1.png" alt="image not found">
+                           <img src="assets/img/shape/slider-card-2.png" alt="image not found">
+                           <img src="assets/img/shape/slider-card-3.png" alt="image not found">
+                           <img src="assets/img/shape/slider-card-4.png" alt="image not found">
+                           <span><i class="far fa-plus"></i></span>
+                        </div>
+                        <h5>Plus que <span>500+</span> etudiants
+                           inscrits</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- slider-area-end -->
+
+      <!-- catagory-area-start -->
+      <div class="top-catagory-area pt-110 pb-90">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-12 col-sm justify-content-center mb-30">
+                  <div class="section-title mb-20 text-center" id="masters">
+                     <h2>Les  <br> Master <span class="down-mark-line">Disponibles</span></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45.01" viewBox="0 0 45 45.01">
+                              <g id="code" transform="translate(-0.061)">
+                                 <path id="Path_8754" data-name="Path 8754"
+                                    d="M29.775,60.8a8.79,8.79,0,0,1-5.352-8.1V28.787A8.777,8.777,0,0,1,33.19,20H27.852a8.791,8.791,0,0,0-8.791,8.791V52.7a8.791,8.791,0,0,0,8.791,8.791h1.886C29.746,61.262,29.758,61.032,29.775,60.8Z"
+                                    transform="translate(-17.33 -18.242)" fill="#c8d6f0" />
+                                 <path id="Path_8755" data-name="Path 8755"
+                                    d="M11.753,45.01H10.61A10.561,10.561,0,0,1,.061,34.461V10.549A10.561,10.561,0,0,1,10.61,0H26.786A10.561,10.561,0,0,1,37.335,10.549V22.5a1.758,1.758,0,0,1-3.516,0V10.549a7.041,7.041,0,0,0-7.033-7.033H10.61a7.041,7.041,0,0,0-7.033,7.033V34.461a7.041,7.041,0,0,0,7.033,7.033h1.143A1.758,1.758,0,0,1,11.753,45.01ZM30.214,16.175a1.758,1.758,0,0,0-1.758-1.758H25.467A2.64,2.64,0,0,1,22.83,11.78V8.791a1.758,1.758,0,0,0-3.516,0V11.78a6.161,6.161,0,0,0,6.154,6.154h2.989A1.758,1.758,0,0,0,30.214,16.175Z"
+                                    transform="translate(0)" fill="#2467ec" />
+                                 <path id="Path_8756" data-name="Path 8756"
+                                    d="M181.9,329.576a1.758,1.758,0,0,1-1.233-3.011l4.592-4.519a1.747,1.747,0,0,0,0-2.462l-4.6-4.586a1.758,1.758,0,1,1,2.483-2.489l4.6,4.586a5.28,5.28,0,0,1,0,7.446l-.008.008-4.6,4.524A1.753,1.753,0,0,1,181.9,329.576Zm-15.1-.525a1.758,1.758,0,0,0-.02-2.486l-4.592-4.519a1.747,1.747,0,0,1,0-2.463l4.6-4.586a1.758,1.758,0,1,0-2.483-2.489l-4.6,4.585a5.28,5.28,0,0,0,0,7.446l.008.008,4.6,4.524a1.758,1.758,0,0,0,2.486-.02Zm6.59-.747,4.044-14.066a1.758,1.758,0,0,0-3.38-.972l-4.044,14.066a1.758,1.758,0,1,0,3.38.972Z"
+                                    transform="translate(-144.217 -284.566)" fill="#ffb013" />
+                              </g>
+                           </svg>
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Mastère de recherche</h3>
+                           <span>informatique décisionnelle de gestion</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg id="briefcase" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                              viewBox="0 0 45 45">
+                              <path id="Path_8750" data-name="Path 8750"
+                                 d="M25.273,163.906V147.031A7.031,7.031,0,0,1,32.3,140H27.031A7.031,7.031,0,0,0,20,147.031v16.875a7.031,7.031,0,0,0,7.031,7.031H32.3A7.031,7.031,0,0,1,25.273,163.906Z"
+                                 transform="translate(-18.242 -127.695)" fill="#c9d7f1" />
+                              <path id="Path_8751" data-name="Path 8751"
+                                 d="M171.82,7.031a1.758,1.758,0,0,1-1.758-1.758A1.76,1.76,0,0,0,168.3,3.516h-7.031a1.76,1.76,0,0,0-1.758,1.758,1.758,1.758,0,0,1-3.516,0A5.279,5.279,0,0,1,161.273,0H168.3a5.279,5.279,0,0,1,5.273,5.273A1.758,1.758,0,0,1,171.82,7.031Z"
+                                 transform="translate(-142.289)" fill="#ffb013" />
+                              <g id="Group_4443" data-name="Group 4443" transform="translate(0 10.547)">
+                                 <path id="Path_8752" data-name="Path 8752"
+                                    d="M36.211,154.453H8.789A8.8,8.8,0,0,1,0,145.664V128.789A8.8,8.8,0,0,1,8.789,120H36.211A8.8,8.8,0,0,1,45,128.789v16.875A8.8,8.8,0,0,1,36.211,154.453ZM8.789,123.516a5.279,5.279,0,0,0-5.273,5.273v16.875a5.279,5.279,0,0,0,5.273,5.273H36.211a5.279,5.279,0,0,0,5.273-5.273V128.789a5.279,5.279,0,0,0-5.273-5.273Z"
+                                    transform="translate(0 -120)" fill="#2467ec" />
+                                 <path id="Path_8753" data-name="Path 8753"
+                                    d="M109.18,196a1.758,1.758,0,0,0-1.758,1.758,5.279,5.279,0,0,1-5.273,5.273H88.789a5.279,5.279,0,0,1-5.273-5.273,1.758,1.758,0,0,0-3.516,0,8.8,8.8,0,0,0,8.789,8.789h4.922V208.3a1.758,1.758,0,1,0,3.516,0v-1.758h4.922a8.8,8.8,0,0,0,8.789-8.789A1.758,1.758,0,0,0,109.18,196Z"
+                                    transform="translate(-72.969 -189.32)" fill="#2467ec" />
+                              </g>
+                           </svg>
+
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Mastère professionnel</h3>
+                           <span>Commerce électronique </span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg id="collection" xmlns="http://www.w3.org/2000/svg" width="44.998" height="44.998"
+                              viewBox="0 0 44.998 44.998">
+                              <path id="Path_8761" data-name="Path 8761"
+                                 d="M25.273,341.834v-.439A4.394,4.394,0,0,1,29.668,337H24.394A4.394,4.394,0,0,0,20,341.394v.439a8.789,8.789,0,0,0,8.789,8.789h5.273A8.789,8.789,0,0,1,25.273,341.834Z"
+                                 transform="translate(-18.242 -307.382)" fill="#c9d7f1" />
+                              <path id="Path_8762" data-name="Path 8762"
+                                 d="M39.725,24.433a1.758,1.758,0,0,1-1.758-1.758V10.546a7.039,7.039,0,0,0-7.031-7.031H14.062a7.039,7.039,0,0,0-7.031,7.031V22.675a1.758,1.758,0,0,1-3.515,0V10.546A10.558,10.558,0,0,1,14.062,0H30.936A10.558,10.558,0,0,1,41.483,10.546V22.675A1.758,1.758,0,0,1,39.725,24.433Zm-13.271-12.3a2.2,2.2,0,1,0-2.2-2.2A2.2,2.2,0,0,0,26.454,12.128ZM45,34.452v-.439a6.159,6.159,0,0,0-6.152-6.152h-5.7a7.041,7.041,0,0,0-6.3,3.883,4.85,4.85,0,0,1-8.687,0,7.041,7.041,0,0,0-6.3-3.883h-5.7A6.159,6.159,0,0,0,0,34.012v.439A10.558,10.558,0,0,0,10.546,45H34.452A10.558,10.558,0,0,0,45,34.452ZM11.854,31.376A3.5,3.5,0,0,1,15,33.291a8.352,8.352,0,0,0,15,0,3.5,3.5,0,0,1,3.145-1.915h5.7a2.64,2.64,0,0,1,2.637,2.637v.439a7.039,7.039,0,0,1-7.031,7.031H10.546a7.039,7.039,0,0,1-7.031-7.031v-.439a2.64,2.64,0,0,1,2.637-2.637Z"
+                                 fill="#2467ec" />
+                              <path id="Path_8763" data-name="Path 8763"
+                                 d="M123.758,157.5a1.758,1.758,0,0,1-1.293-2.948s3.5-3.8,3.537-3.834a6.137,6.137,0,0,1,7.93-.251l.023.018,2.673,2.186c1.263.994,2.255.93,3.311-.214l2.528-2.964a1.758,1.758,0,1,1,2.675,2.281s-2.575,3.018-2.588,3.033a5.778,5.778,0,0,1-4.115,2.079,6.174,6.174,0,0,1-4-1.466l-.022-.018-2.673-2.186a2.63,2.63,0,0,0-3.334.067l-3.355,3.648A1.753,1.753,0,0,1,123.758,157.5Z"
+                                 transform="translate(-111.278 -135.796)" fill="#ffb013" />
+                           </svg>
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Mastère professionnel</h3>
+                           <span>Ingénierie de développement mobile</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+             {{--   <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg id="content-marketing" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                              viewBox="0 0 45 45">
+                              <path id="Path_8764" data-name="Path 8764"
+                                 d="M54.784,57.956l-1.251,1.251L47.37,53.046a10.955,10.955,0,0,1-3-5.6l-1-4.98,4.98,1c.168.034.334.072.5.114l1.316,7.169a10.955,10.955,0,0,0,3,5.6Zm-29.51-6.173V27.877a8.789,8.789,0,0,1,8.789-8.789l18.628-.068,0-.019-23.906.088A8.789,8.789,0,0,0,20,27.877V51.783a8.789,8.789,0,0,0,8.789,8.789l4.575-.028A8.79,8.79,0,0,1,25.273,51.783Z"
+                                 transform="translate(-18.242 -17.33)" fill="#c9d7f1" />
+                              <path id="Path_8765" data-name="Path 8765"
+                                 d="M27.246,45h-16.7A10.559,10.559,0,0,1,0,34.453V10.547A10.559,10.559,0,0,1,10.547,0H34.453A10.559,10.559,0,0,1,45,10.547V27.378a1.758,1.758,0,1,1-3.516,0V10.547a7.039,7.039,0,0,0-7.031-7.031H10.547a7.039,7.039,0,0,0-7.031,7.031V34.453a7.039,7.039,0,0,0,7.031,7.031h16.7a1.758,1.758,0,1,1,0,3.516Zm15.875-1.879a6.423,6.423,0,0,0,0-9.074l-6.162-6.162a12.672,12.672,0,0,0-6.5-3.477l-4.98-1a1.758,1.758,0,0,0-2.068,2.068l1,4.98a12.673,12.673,0,0,0,3.477,6.5l6.162,6.162a6.416,6.416,0,0,0,9.074,0ZM29.772,27.856a9.167,9.167,0,0,1,4.7,2.515l6.162,6.162a2.9,2.9,0,1,1-4.1,4.1l-6.162-6.162a9.168,9.168,0,0,1-2.515-4.7l-.479-2.4Z"
+                                 fill="#2467ec" />
+                              <path id="Path_8766" data-name="Path 8766"
+                                 d="M125.664,103.131H109.58a1.758,1.758,0,0,1,0-3.516h16.084a1.758,1.758,0,0,1,0,3.516Zm1.758,5.273a1.758,1.758,0,0,0-1.758-1.758H101.758a1.758,1.758,0,0,0,0,3.516h23.906A1.758,1.758,0,0,0,127.422,108.4Zm-17.578,7.031a1.758,1.758,0,0,0-1.758-1.758h-6.328a1.758,1.758,0,0,0,0,3.516h6.328A1.758,1.758,0,0,0,109.844,115.436ZM100,101.2a2.2,2.2,0,1,0,2.2-2.2A2.2,2.2,0,0,0,100,101.2Z"
+                                 transform="translate(-91.211 -90.299)" fill="#ffb013" />
+                           </svg>
+
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Marketing</h3>
+                           <span>Take up your self in the next level</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg id="Swimming_Pool" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                              viewBox="0 0 45 45">
+                              <g id="Group_4446" data-name="Group 4446" transform="translate(1.758 12.305)">
+                                 <path id="Path_8767" data-name="Path 8767"
+                                    d="M25.273,163.906V147.031A7.031,7.031,0,0,1,32.3,140H27.031A7.031,7.031,0,0,0,20,147.031v16.875a7.031,7.031,0,0,0,7.031,7.031H32.3A7.031,7.031,0,0,1,25.273,163.906Z"
+                                    transform="translate(-20 -140)" fill="#c9d7f1" />
+                              </g>
+                              <path id="Path_8768" data-name="Path 8768"
+                                 d="M36.211,10.547H31.289V5.273a1.758,1.758,0,0,1,3.516,0,1.758,1.758,0,0,0,3.516,0,5.273,5.273,0,0,0-10.547,0v5.273H17.227V5.273a1.758,1.758,0,0,1,3.516,0,1.758,1.758,0,0,0,3.516,0,5.273,5.273,0,0,0-10.547,0v5.273H8.789A8.8,8.8,0,0,0,0,19.336V36.211A8.8,8.8,0,0,0,8.789,45H36.211A8.8,8.8,0,0,0,45,36.211V19.336A8.8,8.8,0,0,0,36.211,10.547Zm-8.437,3.516v3.516H17.227V14.063ZM41.484,36.211a5.279,5.279,0,0,1-5.273,5.273H8.789a5.279,5.279,0,0,1-5.273-5.273V19.336a5.279,5.279,0,0,1,5.273-5.273h4.922v11.6a1.758,1.758,0,0,0,3.516,0v-4.57H27.773v4.57a1.758,1.758,0,0,0,3.516,0v-11.6h4.922a5.279,5.279,0,0,1,5.273,5.273Z"
+                                 fill="#2467ec" />
+                              <path id="Path_8769" data-name="Path 8769"
+                                 d="M105.883,352a1.758,1.758,0,0,0-1.758,1.758,1.758,1.758,0,0,1-3.516,0,1.758,1.758,0,0,0-3.516,0,1.758,1.758,0,0,1-3.516,0,1.758,1.758,0,0,0-3.516,0,1.758,1.758,0,0,1-3.516,0,1.758,1.758,0,0,0-3.516,0,1.758,1.758,0,0,1-3.516,0,1.758,1.758,0,0,0-3.516,0,5.27,5.27,0,0,0,8.789,3.926,5.261,5.261,0,0,0,7.031,0,5.261,5.261,0,0,0,7.031,0,5.27,5.27,0,0,0,8.789-3.926A1.758,1.758,0,0,0,105.883,352Z"
+                                 transform="translate(-69.32 -321.063)" fill="#ffb013" />
+                           </svg>
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Life Styles</h3>
+                           <span>Improved your life style course</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="44.991" viewBox="0 0 45 44.991">
+                              <g id="no-photo" transform="translate(0 -0.049)">
+                                 <path id="Path_8770" data-name="Path 8770"
+                                    d="M41.972,125.675l-.773.881a8.788,8.788,0,1,1,1.983-17.129A8.81,8.81,0,0,0,41.972,125.675Zm-11.035-23.8-4.15.015A8.787,8.787,0,0,0,18,110.679v14.148a8.787,8.787,0,0,0,8.787,8.787l4.575-.027a8.788,8.788,0,0,1-8.089-8.76V110.679A8.885,8.885,0,0,1,30.937,101.876Z"
+                                    transform="translate(-16.418 -92.879)" fill="#c9d7f1" />
+                                 <path id="Path_8771" data-name="Path 8771"
+                                    d="M23.9,42.316H10.545A10.557,10.557,0,0,1,0,31.771V17.624A10.557,10.557,0,0,1,10.545,7.079h1.718l.682-2.106A7.1,7.1,0,0,1,19.714.049h8.647a7.1,7.1,0,0,1,6.77,4.924l.713,2.2a10.6,10.6,0,0,1,9.147,10.453V23.6a1.758,1.758,0,0,1-3.515,0V17.624a7.051,7.051,0,0,0-6.957-7.029A1.757,1.757,0,0,1,32.866,9.38L31.787,6.057a3.591,3.591,0,0,0-3.426-2.493H19.714a3.591,3.591,0,0,0-3.425,2.492L15.213,9.378a1.757,1.757,0,0,1-1.672,1.216h-3a7.038,7.038,0,0,0-7.03,7.03V31.772a7.038,7.038,0,0,0,7.03,7.03H23.9A1.757,1.757,0,0,1,23.9,42.316Zm1.017-6.887a1.758,1.758,0,0,0-.277-3.5,7.047,7.047,0,0,1-7.594-7.008c.289-9.081,13.321-9.412,14.051-.353a1.757,1.757,0,0,0,3.511-.173c-1.1-13.6-20.643-13.093-21.077.526A10.557,10.557,0,0,0,24.077,35.462c.28,0,.564-.011.842-.033Z"
+                                    fill="#2467ec" />
+                                 <path id="Path_8772" data-name="Path 8772"
+                                    d="M219.527,83.564h-7.654a1.758,1.758,0,0,1,0-3.515h7.654A1.758,1.758,0,0,1,219.527,83.564Zm11.528,26.362,5.084-5.084a1.758,1.758,0,0,0-2.485-2.486l-5.084,5.084-5.084-5.084A1.758,1.758,0,0,0,221,104.842l5.084,5.084L221,115.01a1.757,1.757,0,0,0,2.485,2.486l5.084-5.084,5.084,5.084a1.757,1.757,0,1,0,2.485-2.486Z"
+                                    transform="translate(-191.662 -72.97)" fill="#ffb013" />
+                              </g>
+                           </svg>
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Photography</h3>
+                           <span>Become the great photographer</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg id="Vector" xmlns="http://www.w3.org/2000/svg" width="45" height="45"
+                              viewBox="0 0 45 45">
+                              <g id="Group_4444" data-name="Group 4444" transform="translate(8.437 5.273)">
+                                 <path id="Path_8757" data-name="Path 8757"
+                                    d="M102.3,82.877a3.516,3.516,0,0,1-.531-4.292l10.547-16.875a3.526,3.526,0,0,1,.38-.518,3.515,3.515,0,0,0-5.653.518L96.5,78.584a3.515,3.515,0,0,0,.531,4.292l7.031,7.031a3.5,3.5,0,0,0,2.486,1.03h5.273a3.5,3.5,0,0,1-2.486-1.03Z"
+                                    transform="translate(-95.997 -60)" fill="#c9d7f1" />
+                              </g>
+                              <g id="Group_4445" data-name="Group 4445" transform="translate(0)">
+                                 <path id="Path_8758" data-name="Path 8758"
+                                    d="M171.82,472H157.758a1.758,1.758,0,0,0,0,3.516H171.82a1.758,1.758,0,0,0,0-3.516Z"
+                                    transform="translate(-142.289 -430.516)" fill="#2467ec" />
+                                 <path id="Path_8759" data-name="Path 8759"
+                                    d="M39.727,0a5.282,5.282,0,0,0-4.971,3.516H10.245a5.273,5.273,0,1,0,0,3.516H17.38l-9.934,15.9-.017.027a5.271,5.271,0,0,0,.8,6.439l7.031,7.031a5.239,5.239,0,0,0,3.729,1.545h7.031a5.239,5.239,0,0,0,3.729-1.545l7.031-7.031a5.272,5.272,0,0,0,.8-6.439l-.017-.027L27.62,7.031h7.136A5.273,5.273,0,1,0,39.727,0ZM5.273,7.031A1.758,1.758,0,1,1,7.031,5.273,1.76,1.76,0,0,1,5.273,7.031Zm18.736.856c.017.029-.47-.752,10.554,16.886a1.758,1.758,0,0,1-.273,2.133l-7.031,7.031a1.747,1.747,0,0,1-1.243.515H18.984a1.746,1.746,0,0,1-1.243-.515L10.71,26.907a1.758,1.758,0,0,1-.273-2.133C21.474,7.114,20.968,7.924,20.991,7.887a1.759,1.759,0,0,1,3.019,0Zm15.717-.856a1.758,1.758,0,1,1,1.758-1.758A1.76,1.76,0,0,1,39.727,7.031Z"
+                                    transform="translate(0)" fill="#2467ec" />
+                              </g>
+                              <path id="Path_8760" data-name="Path 8760"
+                                 d="M204.789,162.547h-1.758v-8.789a1.758,1.758,0,1,0-3.516,0v8.789h-1.758a1.758,1.758,0,1,0,0,3.516h7.031a1.758,1.758,0,0,0,0-3.516Z"
+                                 transform="translate(-178.773 -138.641)" fill="#ffb013" />
+                           </svg>
+
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Art & Design</h3>
+                           <span>Grow your design skills</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg id="make" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+                              <path id="Path_8773" data-name="Path 8773"
+                                 d="M42.061,119.6a4.834,4.834,0,0,1-4.834-4.834V99.834A4.834,4.834,0,0,1,42.071,95l1.376.7a4.809,4.809,0,0,0-1.035,2.988v16.084a4.834,4.834,0,0,0,4.834,4.834Zm-16.655,1.988v.4a5.274,5.274,0,0,1,4.114-5.144l-.2-.129H25.273A5.273,5.273,0,0,0,20,121.982v-.4a4.79,4.79,0,0,0,4.79,4.79H30.2A4.79,4.79,0,0,1,25.405,121.587Z"
+                                 transform="translate(-18.242 -86.65)" fill="#c9d7f1" />
+                              <path id="Path_8774" data-name="Path 8774"
+                                 d="M7.91,83.426A5.713,5.713,0,1,0,2.2,77.713,5.719,5.719,0,0,0,7.91,83.426Zm0-7.91a2.2,2.2,0,1,1-2.2,2.2A2.2,2.2,0,0,1,7.91,75.516Zm35.332,6.416a1.758,1.758,0,0,0-1.758,1.758v16.875a3.08,3.08,0,0,1-3.076,3.076H6.592a3.076,3.076,0,0,1,0-6.152h5.977a1.757,1.757,0,0,0,.572-3.418,5.713,5.713,0,1,0-9.983.871,6.59,6.59,0,0,0,2.116,12.083v1.89a1.758,1.758,0,0,0,3.516,0v-1.758H36.738v1.758a1.758,1.758,0,0,0,3.516,0v-2.023A6.6,6.6,0,0,0,45,100.564V83.689A1.758,1.758,0,0,0,43.242,81.932ZM7.91,89.578a2.2,2.2,0,1,1-2.2,2.2A2.2,2.2,0,0,1,7.91,89.578Zm9.316,3.955V78.6a6.592,6.592,0,0,1,6.591-6.592h.015a1.758,1.758,0,0,1,0,3.516h-.011A3.076,3.076,0,0,0,20.742,78.6V93.533a3.08,3.08,0,0,0,3.076,3.076H36.211a1.758,1.758,0,0,1,0,3.516H23.818A6.6,6.6,0,0,1,17.227,93.533Z"
+                                 transform="translate(0 -65.672)" fill="#2467ec" />
+                              <path id="Path_8775" data-name="Path 8775"
+                                 d="M320.789,15.854a5.148,5.148,0,0,1-3.088-1.021c-3.659-2.74-5.631-6.029-5.7-9.513,0-.012,0-.024,0-.036a5.271,5.271,0,0,1,8.789-3.938,5.271,5.271,0,0,1,8.789,3.938c0,.012,0,.024,0,.036-.07,3.483-2.042,6.773-5.7,9.513A5.148,5.148,0,0,1,320.789,15.854ZM315.516,5.268c.07,2.974,2.372,5.312,4.293,6.75a1.645,1.645,0,0,0,1.961,0c1.921-1.438,4.223-3.776,4.293-6.75a1.758,1.758,0,0,0-3.516.005,1.758,1.758,0,0,1-3.516,0,1.758,1.758,0,0,0-3.516-.005Z"
+                                 transform="translate(-284.578)" fill="#ffb013" />
+                           </svg>
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Health & Fitness</h3>
+                           <span>Enjoy the health life with fitness</span>
+                        </div>
+                     </div>
+                  </a>
+               </div>
+               <div class="col-xl-4 col-lg-6 col-md-6">
+                  <a href="course.html">
+
+                     <div class="catagory-wrapper mb-30">
+                        <div class="catagory-thumb">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="45" height="42.172" viewBox="0 0 45 42.172">
+                              <g id="electric-guitar" transform="translate(0 -18.851)">
+                                 <path id="Path_8776" data-name="Path 8776"
+                                    d="M30.011,203.348a15.8,15.8,0,0,1-4.5-11.3c0-5.045,3.023-7.333,6.337-8.894v-1.913C27.529,183.452,20,184.548,20,192.511a15.385,15.385,0,0,0,15.8,15.8,9.708,9.708,0,0,0,3.461-.584A15.272,15.272,0,0,1,30.011,203.348Z"
+                                    transform="translate(-18.163 -149.122)" fill="#c9d7f1" />
+                                 <g id="Group_4447" data-name="Group 4447" transform="translate(0 18.851)">
+                                    <path id="Path_8777" data-name="Path 8777"
+                                       d="M44.41,20.885l-1.136-1.051a3.658,3.658,0,0,0-5.109.116L28.5,30.005a1.059,1.059,0,0,1-1.15.251,1.034,1.034,0,0,1-.7-.915,7.077,7.077,0,0,1,.207-2.56,4.725,4.725,0,0,0-.6-4.154,4.909,4.909,0,0,0-3.755-2.1,5.3,5.3,0,0,0-4.264,2.068A18.642,18.642,0,0,0,16.036,26.5a11.708,11.708,0,0,1-1.7,2.981l-.025.025a13.884,13.884,0,0,1-4.136,2.139A22.873,22.873,0,0,0,3.593,35.2,10.327,10.327,0,0,0,0,43.389c0,2.327.492,8.207,5.038,12.6,4.389,4.546,10.269,5.038,12.6,5.038a10.327,10.327,0,0,0,8.185-3.593,22.871,22.871,0,0,0,3.558-6.586,14.063,14.063,0,0,1,2.162-4.159l0,0,0,0a11.735,11.735,0,0,1,2.979-1.694,18.639,18.639,0,0,0,3.908-2.206A5.3,5.3,0,0,0,40.5,38.518a4.909,4.909,0,0,0-2.1-3.755,4.726,4.726,0,0,0-4.154-.6,1.837,1.837,0,0,0,1.115,3.5,1.038,1.038,0,0,1,.949.118,1.245,1.245,0,0,1,.524.924,1.629,1.629,0,0,1-.71,1.218,16.156,16.156,0,0,1-3.143,1.729,13.5,13.5,0,0,0-4.07,2.469,15.954,15.954,0,0,0-2.937,5.349c-1.915,4.758-3.53,7.877-8.335,7.877a14.043,14.043,0,0,1-9.972-3.936l-.052-.052a14.043,14.043,0,0,1-3.936-9.972c0-4.806,3.119-6.42,7.877-8.335a15.951,15.951,0,0,0,5.35-2.938,13.5,13.5,0,0,0,2.468-4.07A16.163,16.163,0,0,1,21.1,24.9a1.633,1.633,0,0,1,1.218-.71,1.246,1.246,0,0,1,.924.523,1.038,1.038,0,0,1,.118.949,10.613,10.613,0,0,0-.369,3.953,4.754,4.754,0,0,0,8.117,2.972L40.78,22.531l1.136,1.051a1.837,1.837,0,1,0,2.494-2.7Z"
+                                       transform="translate(0 -18.851)" fill="#2467ec" />
+                                    <path id="Path_8778" data-name="Path 8778"
+                                       d="M202.537,204.451a1.837,1.837,0,0,0,0,2.6l4.592,4.592a1.837,1.837,0,1,0,2.6-2.6l-4.592-4.592A1.837,1.837,0,0,0,202.537,204.451Z"
+                                       transform="translate(-183.447 -188.559)" fill="#2467ec" />
+                                 </g>
+                                 <path id="Path_8779" data-name="Path 8779"
+                                    d="M101.573,269.179a1.832,1.832,0,0,1-1.3-.538l-4.592-4.592a1.837,1.837,0,0,1,2.6-2.6l4.592,4.592a1.837,1.837,0,0,1-1.3,3.136Zm-3.844,4.605a1.837,1.837,0,0,0,0-2.6l-4.592-4.592a1.837,1.837,0,1,0-2.6,2.6l4.592,4.592a1.837,1.837,0,0,0,2.6,0Z"
+                                    transform="translate(-81.734 -221.473)" fill="#ffb013" />
+                              </g>
+                           </svg>
+
+                        </div>
+                        <div class="catagory-content">
+                           <h3>Music</h3>
+                           <span>Improve your self with music</span>
+                        </div>
+                     </div>
+                  </a>
+               </div> --}}
+            </div>
+         </div>
+      </div>
+      <!-- catagory-area-end -->
+
+      <!-- portfolio main area start  -->
+    
+      <!-- portfolio main area end -->
+
+      <!-- features-area-start-->
+      <div class="features-area pt-45 pb-15" data-background="assets/img/fact/fact.png">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-4 col-lg-4 col-md-6">
+                  <div class="features-wrapper d-flex align-items-center mb-30">
+                     <div class="features-icon">
+                        <i class="flaticon-online-course"></i>
+                     </div>
+                     
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6">
+                  <div class="features-wrapper d-flex align-items-center mb-30">
+                     <div class="features-icon">
+                        <i class="flaticon-certificate"></i>
+                     </div>
+                     
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6">
+                  <div class="features-wrapper d-flex align-items-center mb-30">
+                     <div class="features-icon">
+                        <i class="flaticon-laptop"></i>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+    
+    
+      <!-- testimonial-area-end -->
+
+      <div class="row">
+        <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-12 col-sm justify-content-center mb-30">
+           <div class="section-title mb-20 text-center">
+              <h2 id="inscription"> Formulaire <br> <span class="down-mark-line">D'inscription</span></h2>
+           </div>
+        </div>
+     </div>
+      <div class="signup-page-area pt-120 pb-120" >
+        <div class="signup-page-area-wrapper">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10 col-lg-10">
+                     <form action="/registeretudiant" enctype="multipart/form-data" method="POST">
+                        @csrf
+                    
+                        {{-- Global Validation Errors --}}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul class="mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
-                </div>
-
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
+                    
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="signup-box text-center" style="padding:233px 30px">
+                                    <div class="signup-text">
+                                        <h3>Inscription</h3>
+                                    </div>
+                                    <div class="signup-message">
+                                        <img src="assets/img/sing-up/sign-up-message.png" alt="image not found">
+                                    </div>
+                                    <div class="signup-thumb">
+                                        <img src="assets/img/sing-up/sign-up.png" alt="image not found">
+                                    </div>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
                             </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
+                    
+                            <div class="col-md-7">
+                                <div class="signup-form-wrapper">
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="nom" placeholder="Nom" value="{{ old('nom') }}" required>
+                                        @error('nom') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="text" name="prenom" placeholder="Prénom" value="{{ old('prenom') }}" required>
+                                        @error('prenom') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="prenom_pere" placeholder="Prénom du Père" value="{{ old('prenom_pere') }}">
+                                        @error('prenom_pere') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <select name="sexe" required>
+                                            <option value="">Sexe</option>
+                                            <option value="homme" {{ old('sexe') == 'homme' ? 'selected' : '' }}>Homme</option>
+                                            <option value="femme" {{ old('sexe') == 'femme' ? 'selected' : '' }}>Femme</option>
+                                        </select>
+                                        @error('sexe') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="date" name="date_naissance" placeholder="Date de naissance" value="{{ old('date_naissance') }}" required>
+                                        @error('date_naissance') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="text" name="gouvernorat_naissance" placeholder="Gouvernorat de naissance" value="{{ old('gouvernorat_naissance') }}" required>
+                                        @error('gouvernorat_naissance') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="nationalite" placeholder="Nationalité" value="{{ old('nationalite') }}" required>
+                                        @error('nationalite') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="text" name="etat_civil" placeholder="État Civil" value="{{ old('etat_civil') }}" required>
+                                        @error('etat_civil') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="cin" placeholder="CIN (Carte d'identité nationale)" value="{{ old('cin') }}" required>
+                                        @error('cin') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="text" name="adresse" placeholder="Adresse" value="{{ old('adresse') }}" required>
+                                        @error('adresse') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="code_postal" placeholder="Code postal" value="{{ old('code_postal') }}" required>
+                                        @error('code_postal') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="text" name="telephone" placeholder="Téléphone" value="{{ old('telephone') }}" required>
+                                        @error('telephone') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="licence" placeholder="Votre Licence" value="{{ old('licence') }}" required>
+                                        @error('licence') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="file" name="licence_certificat" accept="application/pdf">
+                                        <label>Certificat de licence (PDF)</label>
+                                        @error('licence_certificat') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-input-wrapper">
+                                        <input type="text" name="master" placeholder="Votre Master (si vous en avez déjà un)" value="{{ old('master') }}">
+                                        @error('master') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="file" name="master_certificat" accept="application/pdf">
+                                        <label>Certificat de Master (PDF)</label>
+                                        @error('master_certificat') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-wrapper">
+                                        <input type="text" name="interets" placeholder="Intérêts" value="{{ old('interets') }}">
+                                        @error('interets') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-wrapper">
+                                        <input type="text" name="note" placeholder="Note (Dernière note obtenue)" value="{{ old('note') }}">
+                                        @error('note') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-wrapper">
+                                        <input type="email" name="email" placeholder="Adresse Email" value="{{ old('email') }}" required>
+                                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-wrapper">
+                                        <input type="password" name="password" placeholder="Mot de passe" required>
+                                        @error('password') <span class="text-danger">{{ $message }}</span> @enderror
+                    
+                                        <input type="password" name="password_confirmation" placeholder="Confirmer le mot de passe" required>
+                                    </div>
+                    
+                                    <div class="signup-wrapper">
+                                        <label>Photo</label>
+                                        <input type="file" name="photo" accept="image/*">
+                                        @error('photo') <span class="text-danger">{{ $message }}</span> @enderror
+                                    </div>
+                    
+                                    <div class="signup-action">
+                                        <div class="course-sidebar-list">
+                                            <input class="signup-checkbo" type="checkbox" id="terms" required>
+                                            <label class="sign-check" for="terms">
+                                                <span>Accepter les conditions et la <a href="#">Politique de confidentialité</a></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="sing-buttom mb-20">
+                                        <button class="sing-btn" type="submit">S'inscrire</button>
+                                    </div>
+                    
+                                    <div class="acount-login text-center">
+                                        <span>Vous avez déjà un compte ? <a href="{{ route('login') }}">Se connecter</a></span>
+                                    </div>
                                 </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
-                    </div>
-
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
+                    </form>
+                    
+                    
+                        
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+   
+
+      <!-- brand-area-start -->
+    
+      <!-- brand-area-end -->
+   </main>
+
+
+   <!-- footer-area-start -->
+   <footer>
+      <div class="footer-area pt-100">
+         <div class="container">
+            <div class="footer-main mb-60">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <div class="footer-widget f-w1 mb-40">
+                        <div class="footer-img">
+                           <a href="index.html"> <img src="assets/img/logopng.png" alt="footer-logo" style="    width: 90%;"></a>
+                           
+                        </div>
+                        <div class="footer-icon">
+                           <a href="#"><i class="fab fa-facebook-f"></i></a>
+                           <a href="#"><i class="fab fa-twitter"></i></a>
+                           <a href="#"><i class="fab fa-instagram"></i></a>
+                           <a href="#"> <i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <div class="footer-widget f-w2 mb-40">
+                        <h3>Online Platform</h3>
+                        <ul>
+                           <li><a href="#">Proper Guidelines</a></li>
+                           <li><a href="#">Digital Library</a></li>
+                           <li><a href="#">Compare Us</a></li>
+                           <li><a href="#">Become Instructor</a></li>
+                           <li><a href="#">Build Career</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <div class="footer-widget f-w3 mb-40">
+                        <h3>Browse Courses</h3>
+                        <ul>
+                           <li><a href="#">Development</a></li>
+                           <li><a href="#">Business</a></li>
+                           <li><a href="#">Health & Fitness</a></li>
+                           <li><a href="#">Life Styles</a></li>
+                           <li><a href="#">Photography</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                     <div class="footer-widget f-w4 mb-40">
+                        <h3>Insight Community</h3>
+                        <ul>
+                           <li><a href="#">Global Partners</a></li>
+                           <li><a href="#">Forum</a></li>
+                           <li><a href="#">Help & Support</a></li>
+                           <li><a href="#">Community</a></li>
+                           <li><a href="#">Documentation</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright-area">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="copyright-text border-line">
+                           <p>© Copyrighted & Designed
+                              by <a href="https://themeforest.net/user/bdevs"><span>BDevs</span></a> </p>
+                        </div>
+                     </div>
+                     <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="copy-right-support border-line-2">
+                           <div class="copy-right-svg">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="43.945" height="50"
+                                 viewBox="0 0 43.945 50">
+                                 <g id="headphones" transform="translate(-31)">
+                                    <g id="Group_2171" data-name="Group 2171" transform="translate(36.859 20.508)">
+                                       <g id="Group_2170" data-name="Group 2170">
+                                          <path id="Path_2983" data-name="Path 2983"
+                                             d="M95.395,210A4.4,4.4,0,0,0,91,214.395v11.914a4.395,4.395,0,1,0,8.789,0V214.395A4.4,4.4,0,0,0,95.395,210Z"
+                                             transform="translate(-91 -210)" fill="#2467ec" />
+                                       </g>
+                                    </g>
+                                    <g id="Group_2173" data-name="Group 2173" transform="translate(31 23.669)">
+                                       <g id="Group_2172" data-name="Group 2172">
+                                          <path id="Path_2984" data-name="Path 2984"
+                                             d="M33.93,243.6a7.268,7.268,0,0,1,.125-1.234A4.386,4.386,0,0,0,31,246.529v6.055a4.386,4.386,0,0,0,3.054,4.163,7.268,7.268,0,0,1-.125-1.234Z"
+                                             transform="translate(-31 -242.366)" fill="#2467ec" />
+                                       </g>
+                                    </g>
+                                    <g id="Group_2175" data-name="Group 2175" transform="translate(48.578 20.508)">
+                                       <g id="Group_2174" data-name="Group 2174">
+                                          <path id="Path_2985" data-name="Path 2985"
+                                             d="M227.113,210a4.4,4.4,0,0,0-4.395,4.395v11.914a4.4,4.4,0,0,0,4.395,4.395,4.335,4.335,0,0,0,1.259-.206,4.386,4.386,0,0,1-4.189,3.136h-4.664a4.395,4.395,0,1,0,0,2.93h4.664a7.333,7.333,0,0,0,7.324-7.324V214.395A4.4,4.4,0,0,0,227.113,210Z"
+                                             transform="translate(-211 -210)" fill="#2467ec" />
+                                       </g>
+                                    </g>
+                                    <g id="Group_2177" data-name="Group 2177" transform="translate(71.891 23.669)">
+                                       <g id="Group_2176" data-name="Group 2176">
+                                          <path id="Path_2986" data-name="Path 2986"
+                                             d="M449.722,242.366a7.266,7.266,0,0,1,.125,1.234v11.914a7.266,7.266,0,0,1-.125,1.234,4.386,4.386,0,0,0,3.055-4.163v-6.055A4.386,4.386,0,0,0,449.722,242.366Z"
+                                             transform="translate(-449.722 -242.366)" fill="#2467ec" />
+                                       </g>
+                                    </g>
+                                    <g id="Group_2179" data-name="Group 2179" transform="translate(31)">
+                                       <g id="Group_2178" data-name="Group 2178">
+                                          <path id="Path_2987" data-name="Path 2987"
+                                             d="M52.973,0A22,22,0,0,0,31,21.973v.037a7.253,7.253,0,0,1,3-1.361,19.02,19.02,0,0,1,37.952,0,7.256,7.256,0,0,1,3,1.361v-.037A22,22,0,0,0,52.973,0Z"
+                                             transform="translate(-31)" fill="#2467ec" />
+                                       </g>
+                                    </g>
+                                 </g>
+                              </svg>
+                           </div>
+                           <div class="copyright-svg-content">
+                              <p>Have a question? Call us 24/7</p>
+                              <h5><a href="tel:(987)547587587">(987) 547587587</a></h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-5 col-lg-5 col-md-12">
+                        <div class="copyright-subcribe">
+                           <form action="#" class="widget__subscribe">
+                              <div class="field">
+                                 <input type="email" placeholder="Enter Email">
+                              </div>
+                              <button type="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- footer-area-end -->
+
+   <!-- back to top start -->
+   <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+   </div>
+   <!-- back to top end -->
+
+
+   <!-- JS here -->
+   <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+   <script src="assets/js/vendor/waypoints.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/meanmenu.js"></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
+   <script src="assets/js/owl.carousel.min.js"></script>
+   <script src="assets/js/magnific-popup.min.js"></script>
+   <script src="assets/js/huicalendar.js"></script>
+   <script src="assets/js/parallax.min.js"></script>
+   <script src="assets/js/backToTop.js"></script>
+   <script src="assets/js/nice-select.min.js"></script>
+   <script src="assets/js/counterup.min.js"></script>
+   <script src="assets/js/ajax-form.js"></script>
+   <script src="assets/js/wow.min.js"></script>
+   <script src="assets/js/isotope.pkgd.min.js"></script>
+   <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+   <script src="assets/js/main.js"></script>
+</body>
+
 </html>
