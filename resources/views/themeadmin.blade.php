@@ -115,8 +115,33 @@
 
                         
                     </ul>
+
+                    
                     <!-- Submenu End -->
                 </li> 
+                @if(Auth::user()->role<>"admin")
+
+                <li class="sidebar-menu__item has-dropdown">
+                    <a href="javascript:void(0)" class="sidebar-menu__link">
+                        <span class="icon"><i class="ph ph-graduation-cap"></i></span>
+                        <span class="text">intérêts</span>
+                    </a>
+                    <!-- Submenu start -->
+                    <ul class="sidebar-submenu">
+                        <li class="sidebar-submenu__item">
+                            <a href="/ajouter-interet" class="sidebar-submenu__link"> ajouter intérêt </a>
+                        </li>
+
+                        <li class="sidebar-submenu__item">
+                            <a href="/mesinterets" class="sidebar-submenu__link">mes intérêts </a>
+                        </li>
+                        
+                    </ul>
+
+                    
+                    <!-- Submenu End -->
+                </li> 
+                @endif
                 @if(Auth::user()->role=="admin")
                 <li class="sidebar-menu__item">
                     <a href="/etudiants" class="sidebar-menu__link">

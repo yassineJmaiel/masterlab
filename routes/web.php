@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\InterestController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\registeretudiant;
+use App\Models\Interest;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +27,9 @@ Route::get('/ajouter-master', function () {
     return view('ajouter-master');
 });
 
+Route::get('/ajouter-interet', function () {
+    return view('ajouter-interet');
+});
 
 
 Route::get('/etudiants', function () {
@@ -50,9 +55,14 @@ Route::get('/listcandidatures', [ApplicationController::class, 'listcandidatures
 
 Route::get('/affichercandidature/{id}', [ApplicationController::class, 'affichercandidature']);
 
+Route::get('/mesinterets', [InterestController::class, 'mesinterets']);
+
+
 
 Route::get('accepter/{id}', [ApplicationController::class, 'accepter'])->name('candidature.accepter');
 Route::get('refuser/{id}', [ApplicationController::class, 'refuser'])->name('candidature.refuser');
 
+Route::post('/addinterest', [InterestController::class, 'addinterest']);
 
+Route::delete('/interets/{id}', [InterestController::class, 'destroy'])->name('interets.destroy');
 
