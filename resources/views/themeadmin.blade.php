@@ -150,6 +150,19 @@
                     </a>
                 </li>
                 @endif
+
+                <div class="p-20 pt-80">
+                    <div class="bg-main-50 p-20 pt-0 rounded-16 text-center mt-74">
+                        <span class="border border-5 bg-white mx-auto border-primary-50 w-114 h-114 rounded-circle flex-center text-success-600 text-2xl translate-n74">
+                            <img src="assets2/images/icons/certificate.png" alt="" class="centerised-img">
+                        </span>
+                        <div class="mt-n74">
+                            <h5 class="mb-4 mt-22">Program Master</h5>
+                            <p class="">Recommendation AI</p>
+                            <a href="#" class="btn btn-main mt-16 rounded-pill" data-bs-toggle="modal" data-bs-target="#recommendationModal">Accéder</a>
+                        </div>
+                    </div>
+                </div>
               
                {{--  <li class="sidebar-menu__item">
                     <a href="mentors.html" class="sidebar-menu__link">
@@ -423,7 +436,66 @@
 
     </div>
 </div>
-
+<div class="modal fade" id="recommendationModal" tabindex="-1" aria-labelledby="recommendationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-4">
+        
+        <div class="modal-header">
+            <div class="d-flex align-items-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="Assistant IA" width="40" height="40" class="me-2">
+                <h5 class="modal-title mb-0" id="recommendationModalLabel">Bonjour ! Je suis votre assistant IA 🤖</h5>
+              </div>
+          <h5 class="modal-title" id="recommendationModalLabel">Recommendation Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="" method="POST" class="space-y-6">
+                @csrf
+      
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-semibold">👤 Nom complet</label>
+                  <input type="text" name="name" id="name" required class="form-control rounded-3" placeholder="ex: Sarah Dupont">
+                </div>
+      
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="GPA" class="form-label fw-semibold">📊 Moyenne (GPA)</label>
+                    <input type="number" step="0.1" name="GPA" id="GPA" required class="form-control rounded-3" placeholder="0.0 - 4.0">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="AI_Grade" class="form-label fw-semibold">🤖 Note en IA</label>
+                    <input type="number" step="0.1" name="AI_Grade" id="AI_Grade" required class="form-control rounded-3" placeholder="0.0 - 100.0">
+                  </div>
+                </div>
+      
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="Math_Grade" class="form-label fw-semibold">🧮 Note en Math</label>
+                    <input type="number" step="0.1" name="Math_Grade" id="Math_Grade" required class="form-control rounded-3" placeholder="0.0 - 100.0">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="English_Grade" class="form-label fw-semibold">📚 Note en Anglais</label>
+                    <input type="number" step="0.1" name="English_Grade" id="English_Grade" required class="form-control rounded-3" placeholder="0.0 - 100.0">
+                  </div>
+                </div>
+      
+                <div class="mb-4">
+                  <label for="Interests" class="form-label fw-semibold">✨ Centres d’intérêt</label>
+                  <input type="text" name="Interests" id="Interests" required class="form-control rounded-3" placeholder="ex: IA, Robotique, Data Science">
+                  <div class="form-text">Séparez les centres d’intérêt par des virgules</div>
+                </div>
+      
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success rounded-pill py-2 fs-5">
+                    🔍 Obtenir une recommandation
+                  </button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
         
         <div class="dashboard-body">
            
@@ -471,6 +543,8 @@
 
 
 
+<!-- Bootstrap JS bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
    
     

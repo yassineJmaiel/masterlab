@@ -36,6 +36,12 @@ Route::get('/etudiants', function () {
     return view('listeetudiant');
 });
 
+
+Route::get('/chatform', function () {
+    return view('chatform');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
