@@ -442,9 +442,9 @@
         
         <div class="modal-header">
             <div class="d-flex align-items-center">
-                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="Assistant IA" width="40" height="40" class="me-2">
-                <h5 class="modal-title mb-0" id="recommendationModalLabel">Bonjour ! Je suis votre assistant IA 🤖</h5>
-              </div>
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="Assistant IA" width="40" height="40" class="me-2">
+          <h5 class="modal-title mb-0" id="recommendationModalLabel">Bonjour ! Je suis votre assistant IA 🤖</h5>
+        </div>
           <h5 class="modal-title" id="recommendationModalLabel">Recommendation Form</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -544,7 +544,6 @@
 
 
 <!-- Bootstrap JS bundle (includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
    
     
