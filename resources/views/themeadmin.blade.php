@@ -445,7 +445,6 @@
           <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="Assistant IA" width="40" height="40" class="me-2">
           <h5 class="modal-title mb-0" id="recommendationModalLabel">Bonjour ! Je suis votre assistant IA 🤖</h5>
         </div>
-          <h5 class="modal-title" id="recommendationModalLabel">Recommendation Form</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -480,10 +479,13 @@
                 </div>
       
                 <div class="mb-4">
-                  <label for="Interests" class="form-label fw-semibold">✨ Centres d’intérêt</label>
-                  <input type="text" name="Interests" id="Interests" required class="form-control rounded-3" placeholder="ex: IA, Robotique, Data Science">
-                  <div class="form-text">Séparez les centres d’intérêt par des virgules</div>
-                </div>
+                    <label for="Interests" class="form-label fw-semibold">✨ Centres d’intérêt</label>
+                    <input type="text" name="Interests" id="Interests" required
+                           class="form-control rounded-3"
+                           placeholder="ex: IA, Robotique, Data Science"
+                           value="{{ old('Interests', $etudiantInterests) }}">
+                    <div class="form-text">Séparez les centres d’intérêt par des virgules</div>
+                  </div>
       
                 <div class="d-grid">
                   <button type="submit" class="btn btn-success rounded-pill py-2 fs-5">
