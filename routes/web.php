@@ -72,3 +72,6 @@ Route::post('/addinterest', [InterestController::class, 'addinterest']);
 
 Route::delete('/interets/{id}', [InterestController::class, 'destroy'])->name('interets.destroy');
 
+use App\Http\Controllers\PredictionController;
+
+Route::post('/predict', [PredictionController::class, 'predict'])->name('predict');

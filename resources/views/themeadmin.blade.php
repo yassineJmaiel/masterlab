@@ -38,10 +38,19 @@
             position: fixed;
             z-index: 9999;
         }
+                body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+        }
     </style>
 </head> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <body>
     
     <script>
@@ -72,7 +81,8 @@
     <!-- sidebar close btn -->
     
     <a href="index-2.html" class="sidebar__logo text-center p-20 position-sticky inset-block-start-0 bg-white w-100 z-1 pb-10">
-        <img src="/assets/img/logo1.png" alt="Logo" style="    width: 65%;
+        <img src="/assets/img/logo1.png" alt="Logo" style="    width: 65%;     margin-left: 13%;
+
 ">
     </a>
 
@@ -154,7 +164,7 @@
                 <div class="p-20 pt-80">
                     <div class="bg-main-50 p-20 pt-0 rounded-16 text-center mt-74">
                         <span class="border border-5 bg-white mx-auto border-primary-50 w-114 h-114 rounded-circle flex-center text-success-600 text-2xl translate-n74">
-                            <img src="assets2/images/icons/certificate.png" alt="" class="centerised-img">
+                            <img src="/assets2/images/icons/certificate.png" alt="" class="centerised-img">
                         </span>
                         <div class="mt-n74">
                             <h5 class="mb-4 mt-22">Program Master</h5>
@@ -438,65 +448,93 @@
 </div>
 <div class="modal fade" id="recommendationModal" tabindex="-1" aria-labelledby="recommendationModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content p-4">
-        
-        <div class="modal-header">
-            <div class="d-flex align-items-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="Assistant IA" width="40" height="40" class="me-2">
-          <h5 class="modal-title mb-0" id="recommendationModalLabel">Bonjour ! Je suis votre assistant IA 🤖</h5>
+        <div class="modal-content p-8 shadow-xl rounded-3xl bg-white">
+            <div class="modal-header border-b-0">
+                <div class="flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" alt="Assistant IA" width="40" height="40" class="mr-4">
+                    <h5 class="modal-title text-primary text-2xl font-semibold" id="recommendationModalLabel">Bonjour ! Je suis votre assistant IA 🤖</h5>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="{{ route('predict') }}" method="POST">
+                    @csrf
+
+                    <!-- Name Input -->
+                    <div class="mb-6">
+                        <label for="name" class="text-sm font-medium text-gray-700">👤 Nom complet</label>
+                        <input type="text" name="name" id="name" class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" value="{{ Auth::user()->nom }} {{ Auth::user()->prenom }}" readonly>
+                    </div>
+
+                    <!-- Grades Inputs (MG1, MG2, MG3) -->
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div>
+                            <label for="MG1" class="text-sm font-medium text-gray-700">📊 Moyenne Gén de la 1ére année</label>
+                            <input type="number" step="0.01" name="MG1" id="MG1" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 15.5">
+                        </div>
+                        <div>
+                            <label for="MG2" class="text-sm font-medium text-gray-700">📊 Moyenne Gén de la 2éme année</label>
+                            <input type="number" step="0.01" name="MG2" id="MG2" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 14.8">
+                        </div>
+                        <div>
+                            <label for="MG3" class="text-sm font-medium text-gray-700">📊 Moyenne Gén de la 3éme année</label>
+                            <input type="number" step="0.01" name="MG3" id="MG3" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 16.2">
+                        </div>
+                    </div>
+
+                    <!-- Other Inputs (UF, NP, NC, NR) -->
+                    <div class="grid grid-cols-4 gap-4 mb-6">
+                        <div>
+                            <label for="UF" class="text-sm font-medium text-gray-700">📚 N° Unités Fondamentales suivi</label>
+                            <input type="number" name="UF" id="UF" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 3">
+                        </div>
+                        <div>
+                            <label for="NP" class="text-sm font-medium text-gray-700">📚 N° de réussite à la session principale</label>
+                            <input type="number" name="NP" id="NP" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 3 ">
+                        </div>
+                        <div>
+                            <label for="NC" class="text-sm font-medium text-gray-700">📘 N° de réussite à la session de contrôle.</label>
+                            <input type="number" name="NC" id="NC" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 2">
+                        </div>
+                        <div>
+                            <label for="NR" class="text-sm font-medium text-gray-700">📖 N° d'années de redoublement</label>
+                            <input type="number" name="NR" id="NR" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 1">
+                        </div>
+                    </div>
+
+                    <!-- Interests Input -->
+                    <div class="mb-6">
+                        <label for="Interests" class="text-sm font-medium text-gray-700">✨ Centres d’intérêt</label>
+                        <input type="text" name="interests" id="Interests" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: IA, Robotique, Data Science" value="{{ old('Interests', $etudiantInterests ?? '') }}" readonly>
+                        <small class="text-xs text-gray-500">Séparez les centres d’intérêt par des virgules</small>
+                    </div>
+
+                    <!-- Select Master -->
+                    <div class="mb-6">
+                        <label for="chosen_master" class="text-sm font-medium text-gray-700">🎓 Choisissez un master</label>
+                        <select name="chosen_master" id="chosen_master" required class="form-select w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="" disabled selected>-- Sélectionnez un master --</option>
+                            <option value="Mastére de recherche : Informatique Décisionnelle de Gestion">Mastére de recherche : Informatique Décisionnelle de Gestion</option>
+                            <option value="Mastére Professionnel : Ingénierie de Développement Mobile : MP IDM">Mastére Professionnel : Ingénierie de Développement Mobile : MP IDM</option>
+                            <option value="Mastére Professionnel Commerce Electronique : MP CE">Mastére Professionnel Commerce Electronique : MP CE</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-full py-3 rounded-full text-white bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            🔍 Obtenir une recommandation
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form action="" method="POST" class="space-y-6">
-                @csrf
-      
-                <div class="mb-3">
-                  <label for="name" class="form-label fw-semibold">👤 Nom complet</label>
-                  <input type="text" name="name" id="name" required class="form-control rounded-3" placeholder="ex: Sarah Dupont">
-                </div>
-      
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="GPA" class="form-label fw-semibold">📊 Moyenne (GPA)</label>
-                    <input type="number" step="0.1" name="GPA" id="GPA" required class="form-control rounded-3" placeholder="0.0 - 4.0">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="AI_Grade" class="form-label fw-semibold">🤖 Note en IA</label>
-                    <input type="number" step="0.1" name="AI_Grade" id="AI_Grade" required class="form-control rounded-3" placeholder="0.0 - 100.0">
-                  </div>
-                </div>
-      
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="Math_Grade" class="form-label fw-semibold">🧮 Note en Math</label>
-                    <input type="number" step="0.1" name="Math_Grade" id="Math_Grade" required class="form-control rounded-3" placeholder="0.0 - 100.0">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="English_Grade" class="form-label fw-semibold">📚 Note en Anglais</label>
-                    <input type="number" step="0.1" name="English_Grade" id="English_Grade" required class="form-control rounded-3" placeholder="0.0 - 100.0">
-                  </div>
-                </div>
-      
-                <div class="mb-4">
-                    <label for="Interests" class="form-label fw-semibold">✨ Centres d’intérêt</label>
-                    <input type="text" name="Interests" id="Interests" required
-                           class="form-control rounded-3"
-                           placeholder="ex: IA, Robotique, Data Science"
-                           value="{{ old('Interests', $etudiantInterests) }}">
-                    <div class="form-text">Séparez les centres d’intérêt par des virgules</div>
-                  </div>
-      
-                <div class="d-grid">
-                  <button type="submit" class="btn btn-success rounded-pill py-2 fs-5">
-                    🔍 Obtenir une recommandation
-                  </button>
-                </div>
-              </form>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+
+
   
         
         <div class="dashboard-body">
