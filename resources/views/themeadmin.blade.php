@@ -484,12 +484,9 @@
                         </div>
                     </div>
 
-                    <!-- Other Inputs (UF, NP, NC, NR) -->
+                    <!-- Other Inputs ( NP, NC, NR) -->
                     <div class="grid grid-cols-4 gap-4 mb-6">
-                        <div>
-                            <label for="UF" class="text-sm font-medium text-gray-700">📚 N° Unités Fondamentales suivi</label>
-                            <input type="number" name="UF" id="UF" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 3">
-                        </div>
+
                         <div>
                             <label for="NP" class="text-sm font-medium text-gray-700">📚 N° de réussite à la session principale</label>
                             <input type="number" name="NP" id="NP" required class="form-control w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="ex: 3 ">

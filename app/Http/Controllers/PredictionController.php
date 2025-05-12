@@ -14,7 +14,6 @@ class PredictionController extends Controller
             'MG1' => 'required|numeric',
             'MG2' => 'required|numeric',
             'MG3' => 'required|numeric',
-            'UF' => 'required|integer',
             'NP' => 'required|integer',
             'NC' => 'required|integer',
             'NR' => 'required|integer',
@@ -23,11 +22,11 @@ class PredictionController extends Controller
         ]);
 
         // Send request to FastAPI
-        $response = Http::post('http://localhost:5000/predict', [
+        // $response = Http::post('https://brdhaker3-chatbot.hf.space/predictTwo', [
+        $response = Http::withoutVerifying()->post('https://brdhaker3-chatbot.hf.space/predictTwo', [
             'MG1' => $validated['MG1'],
             'MG2' => $validated['MG2'],
             'MG3' => $validated['MG3'],
-            'UF' => $validated['UF'],
             'NP' => $validated['NP'],
             'NC' => $validated['NC'],
             'NR' => $validated['NR'],
