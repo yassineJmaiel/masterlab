@@ -160,7 +160,7 @@
                     </a>
                 </li>
                 @endif
-
+        @if(Auth::user()->role=="etudiant")
                 <div class="p-20 pt-80">
                     <div class="bg-main-50 p-20 pt-0 rounded-16 text-center mt-74">
                         <span class="border border-5 bg-white mx-auto border-primary-50 w-114 h-114 rounded-circle flex-center text-success-600 text-2xl translate-n74">
@@ -173,6 +173,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
               
                {{--  <li class="sidebar-menu__item">
                     <a href="mentors.html" class="sidebar-menu__link">
