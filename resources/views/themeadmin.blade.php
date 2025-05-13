@@ -513,7 +513,7 @@
                         <label for="chosen_master" class="text-sm font-medium text-gray-700">🎓 Choisissez un master</label>
                         <select name="chosen_master" id="chosen_master" required class="form-select w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
                             @foreach($masters as $master)
-                            <option value="">{{$master->type}} : {{$master->nom}}</option>
+                            <option value="{{$master->type}} : {{$master->nom}}">{{$master->type}} : {{$master->nom}}</option>
                         @endforeach
                         </select>
                     </div>
