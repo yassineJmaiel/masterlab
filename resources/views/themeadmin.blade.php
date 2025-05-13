@@ -512,10 +512,9 @@
                     <div class="mb-6">
                         <label for="chosen_master" class="text-sm font-medium text-gray-700">🎓 Choisissez un master</label>
                         <select name="chosen_master" id="chosen_master" required class="form-select w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="" disabled selected>-- Sélectionnez un master --</option>
-                            <option value="Mastére de recherche : Informatique Décisionnelle de Gestion">Mastére de recherche : Informatique Décisionnelle de Gestion</option>
-                            <option value="Mastére Professionnel : Ingénierie de Développement Mobile : MP IDM">Mastére Professionnel : Ingénierie de Développement Mobile : MP IDM</option>
-                            <option value="Mastére Professionnel Commerce Electronique : MP CE">Mastére Professionnel Commerce Electronique : MP CE</option>
+                            @foreach($masters as $master)
+                            <option value="">{{$master->type}} : {{$master->nom}}</option>
+                        @endforeach
                         </select>
                     </div>
 
