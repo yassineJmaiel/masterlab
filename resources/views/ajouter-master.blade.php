@@ -40,8 +40,8 @@
                                 <label for="type" class="h5 mb-8 fw-semibold font-heading">Type</label>
                                 <div class="position-relative">
                                     <select name="type" id="type" class="form-select py-9 placeholder-13 text-15" required>
-                                        <option value="Mastère professionnel">Mastère professionnel</option>
-                                        <option value="Mastère de recherche">Mastère de recherche</option>
+                                        <option value="Mastére Professionnel">Mastère professionnel</option>
+                                        <option value="Mastére de recherche">Mastère de recherche</option>
                                     </select>
                                 </div>
                             </div>
