@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\application;
+use App\Models\master;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 class ApplicationController extends Controller
 {
@@ -93,6 +95,15 @@ public function listcandidatures(){
         return view('detailscandidature', compact('candidature', 'score'));
     }
     
+  public function modifiercondidat($id)
+    {
+        $candidature = application::findOrFail($id);
+    
+     
+    
+        return view('modifiercondidat', compact('candidature', ));
+    }
+
 
 public function accepter($id)
 {
@@ -111,6 +122,53 @@ public function refuser($id)
 
     return redirect()->back()->with('success', 'Candidature refusée avec succès.');
 }
+
+
+public function deleteuser($id){
+
+    $user=User::find($id);
+    $user->delete();
+
+    return redirect()->back()->with('success', 'etudiant  supprimer avec succès.');
+}
+
+public function deletemaster($id){
+
+    $user=master::find($id);
+    $user->delete();
+
+    return redirect()->back()->with('success', 'master  supprimer avec succès.');
+}
+
+public function update(Request $request, $id)
+{
+    
+
+    $candidature = application::findOrFail($id);
+    
+
+    $candidature->update([
+        'annee_bac' => $request->annee_bac,
+        'nature_licence' => $request->nature_licence,
+        'etablissement' => $request->etablissement,
+        'annee_licence' => $request->annee_licence,
+        'specialite' => $request->specialite,
+
+        'moyenne_annee_1' => $request->moyenne_annee_1,
+        'session_annee_1' => $request->session_annee_1,
+        'moyenne_annee_2' => $request->moyenne_annee_2,
+        'session_annee_2' => $request->session_annee_2,
+        'moyenne_annee_3' => $request->moyenne_annee_3,
+        'session_annee_3' => $request->session_annee_3,
+
+        'note_pfe' => $request->note_pfe,
+        'redoublement' => $request->redoublement,
+        'annees_blanches' => $request->annees_blanches,
+    ]);
+
+    return redirect()->back()->with('success', 'Candidature mise à jour avec succès.');
+}
+
 
 
 }

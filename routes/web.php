@@ -75,3 +75,17 @@ Route::delete('/interets/{id}', [InterestController::class, 'destroy'])->name('i
 use App\Http\Controllers\PredictionController;
 
 Route::post('/predict', [PredictionController::class, 'predict'])->name('predict');
+
+
+
+
+Route::get('deleteetudiant/{id}', [ApplicationController::class, 'deleteuser']);
+Route::get('deletemaster/{id}', [ApplicationController::class, 'deletemaster']);
+
+
+
+Route::get('/modifiercondidat/{id}', [ApplicationController::class, 'modifiercondidat']);
+
+
+Route::post('/updatecondidat/{id}', [ApplicationController::class, 'update']);
+

@@ -33,11 +33,8 @@
                                     <div class="mt-auto">
                                         @if(Auth::user()->role == "admin")
                                         <div class="d-flex justify-content-center align-items-center gap-2">
-                                            <a href="#" class="btn btn-warning rounded-pill py-2 px-4 text-white">Modifier</a>
-                                            <form action="#" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce master ?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger rounded-pill py-2 px-4">Supprimer</button>
+                                            
+                                                <a href="deletemaster/{{$master->id}}" class="btn btn-danger rounded-pill py-2 px-4">Supprimer</a>
                                             </form>
                                         </div>
                                         @else

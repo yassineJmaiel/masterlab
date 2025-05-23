@@ -21,6 +21,7 @@
                         <th>Spécialité</th>
                         <th>Date de Candidature</th>
                         <th>Statut</th>
+                        <th> Action</th>
                     
                     </tr>
                 </thead>
@@ -43,6 +44,19 @@
                             <span class="badge bg-warning text-white">{{$candidature->statut}}</span>
  
                             @endif                           
+                        </td>
+
+                        <td>
+                            @if( $candidature->statut=="en cours de vérification")
+
+                          <a href="modifiercondidat/{{$candidature->id}}" class="btn btn-primary">modifier</a>
+
+                          @else 
+
+
+                            <a href="javascript:void(0)" class="btn btn-primary" style="cursor:no-drop">modifier</a>
+
+                            @endif
                         </td>
 
                       

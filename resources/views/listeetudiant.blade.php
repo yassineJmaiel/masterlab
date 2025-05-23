@@ -64,8 +64,7 @@
                         <td>{{ $student->date_naissance }}</td>
                         <td>
                             <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary btn-sm">Modifier</a>
-                                <a href="#" class="btn btn-danger btn-sm">Supprimer</a>
+                                <a href="deleteetudiant/{{$student->id}}" class="btn btn-danger btn-sm">Supprimer</a>
                             </div>
                         </td>
                     </tr>
