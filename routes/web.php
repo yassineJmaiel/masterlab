@@ -23,6 +23,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/about', function () {
+    return view('apropos');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+
 Route::get('/ajouter-master', function () {
     return view('ajouter-master');
 });
@@ -85,7 +95,11 @@ Route::get('deletemaster/{id}', [ApplicationController::class, 'deletemaster']);
 
 
 Route::get('/modifiercondidat/{id}', [ApplicationController::class, 'modifiercondidat']);
+Route::get('/deletecondidat/{id}', [ApplicationController::class, 'deletecondidat']);
+
 
 
 Route::post('/updatecondidat/{id}', [ApplicationController::class, 'update']);
 
+Route::post('updateDetails', [ApplicationController::class, 'updateDetails']);
+Route::post('/updatepass', [ApplicationController::class, 'updatePassword']);

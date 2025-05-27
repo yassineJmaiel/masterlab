@@ -50,6 +50,8 @@
                             @if( $candidature->statut=="en cours de vérification")
 
                           <a href="modifiercondidat/{{$candidature->id}}" class="btn btn-primary">modifier</a>
+                            <a href="deletecondidat/{{$candidature->id}}" class="btn btn-danger">Annuler</a>
+
 
                           @else 
 

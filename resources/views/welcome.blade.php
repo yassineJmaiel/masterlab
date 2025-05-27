@@ -98,15 +98,15 @@
                   <div class="col-xl-7 col-lg-7 col-md-5 col-sm-9 col-9">
                      <div class="header-left d-flex align-items-center">
                         <div class="header-logo">
-                           <a href="index.html"><img src="assets/img/logo.jpg" alt="logo" style="width: 50%; margin-bottom: 14%;"></a>
+                           <a href="/"><img src="assets/img/logo.jpg" alt="logo" style="width: 50%; margin-bottom: 14%;"></a>
                         </div>
                      
                         <div class="main-menu d-none d-xl-block">
                            <nav id="mobile-menu">
                               <ul>
-                                 <li><a href="index.html">Acceuil</a> </li>
+                                 <li><a href="/">Acceuil</a> </li>
 
-                                 <li><a href="index.html">a propos de nous</a> </li>
+                                 <li><a href="/about">a propos de nous</a> </li>
 
                                    
                                  
@@ -609,8 +609,7 @@
                                     </div>
                     
                                     <div class="signup-wrapper">
-                                        <input type="text" name="interets" placeholder="Intérêts" value="{{ old('interets') }}">
-                                        @error('interets') <span class="text-danger">{{ $message }}</span> @enderror
+                                        <input type="text" hidden name="interets" placeholder="Intérêts" value="test">
                                     </div>
                     
                                     <div class="signup-wrapper">
@@ -680,7 +679,7 @@
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <div class="footer-widget f-w1 mb-40">
                         <div class="footer-img">
-                           <a href="index.html"> <img src="assets/img/logopng.png" alt="footer-logo" style="    width: 90%;"></a>
+                           <a href="/"> <img src="assets/img/logopng.png" alt="footer-logo" style="    width: 90%;"></a>
                            
                         </div>
                        
@@ -691,7 +690,7 @@
                         <h3>lien rapide</h3>
                         <ul>
                            <li><a href="/">Acceuil</a></li>
-                           <li><a href="#">A propos de nous </a></li>
+                           <li><a href="about">A propos de nous </a></li>
                            <li><a href="login">se connecter</a></li>
                            <li><a href="#inscription">s'inscrire</a></li>
                         </ul>

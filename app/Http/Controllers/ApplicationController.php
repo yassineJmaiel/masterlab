@@ -7,6 +7,7 @@ use App\Models\application;
 use App\Models\master;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class ApplicationController extends Controller
 {
     
@@ -105,6 +106,17 @@ public function listcandidatures(){
     }
 
 
+     public function deletecondidat($id)
+    {
+        $candidature = application::findOrFail($id);
+
+        $candidature->delete();
+    
+     
+    
+        return redirect()->back()->with('success', 'Candidature Annulé avec succès.');
+    }
+
 public function accepter($id)
 {
     $candidature = application::find($id);
@@ -167,6 +179,65 @@ public function update(Request $request, $id)
     ]);
 
     return redirect()->back()->with('success', 'Candidature mise à jour avec succès.');
+}
+
+
+public function updateDetails(Request $request)
+{
+    $user = User::find(Auth::user()->id);
+
+    $validated = $request->validate([
+        'prenom' => 'nullable|string|max:255',
+        'nom' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email,' . $user->id,
+        'telephone' => 'nullable|string|max:20',
+        'cin' => 'nullable|string|max:50',
+        'date_naissance' => 'nullable|date',
+        'image' => 'nullable|image|max:2048', // Optional profile photo
+    ]);
+
+    // Save updated data
+    $user->update($validated);
+
+    // If image was uploaded
+    if ($request->hasFile('image')) {
+    $image = $request->file('image');
+    $filename = time() . '_' . $image->getClientOriginalName();
+    $destinationPath = public_path('uploads/profile');
+
+    // Create directory if not exists
+    if (!file_exists($destinationPath)) {
+        mkdir($destinationPath, 0755, true);
+    }
+
+    // Move file
+    $image->move($destinationPath, $filename);
+
+    // Save relative path in DB
+    $user->photo = 'uploads/profile/' . $filename;
+    $user->save();
+}
+
+    return redirect()->back()->with('success', 'Informations mises à jour avec succès.');
+}
+
+public function updatePassword(Request $request)
+{
+    $request->validate([
+        'current_password' => 'required',
+        'new_password' => 'required|min:8|confirmed',
+    ]);
+
+    $user = User::find(Auth::user()->id);
+
+    if (!Hash::check($request->current_password, $user->password)) {
+        return back()->withErrors(['current_password' => 'Le mot de passe actuel est incorrect.']);
+    }
+
+    $user->password = Hash::make($request->new_password);
+    $user->save();
+
+    return back()->with('success', 'Mot de passe mis à jour avec succès.');
 }
 
 
