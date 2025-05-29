@@ -406,7 +406,7 @@
                     @if(Auth::user()->role=="admin")
                     <img src="/assets2/images/thumbs/user-img.png" alt="Image" class="h-32 w-32 rounded-circle">
                     @else
-                     <img src="{{Auth::user()->photo}}" alt="Image" class="h-32 w-32 rounded-circle">
+                     <img src="/{{Auth::user()->photo}}" alt="Image" class="h-32 w-32 rounded-circle">
 @endif
                     <span class="activation-badge w-8 h-8 position-absolute inset-block-end-0 inset-inline-end-0"></span>
                 </span>
@@ -421,7 +421,7 @@
 
                                @else
 
-                            <img src="{{Auth::user()->photo}}" alt="" class="w-54 h-54 rounded-circle">
+                            <img src="/{{Auth::user()->photo}}" alt="" class="w-54 h-54 rounded-circle">
                             @endif
                             <div class="">
                                 <h4 class="mb-0">{{Auth::user()->nom}}</h4>

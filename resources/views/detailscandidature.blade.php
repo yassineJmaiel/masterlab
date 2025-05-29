@@ -75,10 +75,7 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label>Spécialité</label>
-                    <input type="text" class="form-control" value="{{ $candidature->specialite }}" readonly>
-                </div>
+                
 
                 <hr>
                 <h6>*Eléments du calcul de score :</h6>

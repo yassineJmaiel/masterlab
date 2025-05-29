@@ -180,7 +180,7 @@
                            <img src="assets/img/shape/slider-card-4.png" alt="image not found">
                            <span><i class="far fa-plus"></i></span>
                         </div>
-                        <h5>Plus que <span>500+</span> etudiants
+                        <h5>Plus que <span>3000+</span> etudiants
                            inscrits</h5>
                      </div>
                   </div>

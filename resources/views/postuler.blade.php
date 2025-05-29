@@ -70,13 +70,11 @@
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label>Spécialité</label>
-                    <select name="specialite" class="form-control">
-                        <option value="BIS">Business Information Systems (BIS)</option>
-                        <option value="EB">Electronique Business (EB)</option>
-                    </select>
-                </div>
+                
+                   
+               <input type="hidden" name="specialite" class="form-control">
+
+               
 
                 <hr>
                 <h6>*Eléments du calcul de score :</h6>

@@ -18,7 +18,6 @@
                         <th>#</th>
                         <th>Nom du Mastère</th>
                         <th>Type</th>
-                        <th>Spécialité</th>
                         <th>Date de Candidature</th>
                         <th>Statut</th>
                         <th> Action</th>
@@ -31,7 +30,6 @@
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $candidature->master->nom }}</td>
                         <td>{{ $candidature->master->type }}</td>
-                        <td>{{ $candidature->specialite }}</td>
                         <td>{{ $candidature->created_at->format('d/m/Y') }}</td>
                         <td>
                            
