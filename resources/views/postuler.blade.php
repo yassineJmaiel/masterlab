@@ -72,7 +72,7 @@
 
                 
                    
-               <input type="hidden" name="specialite" class="form-control">
+               <input type="hidden" name="specialite" class="form-control" value="test">
 
                
 
