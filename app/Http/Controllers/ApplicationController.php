@@ -164,7 +164,7 @@ public function update(Request $request, $id)
         'nature_licence' => $request->nature_licence,
         'etablissement' => $request->etablissement,
         'annee_licence' => $request->annee_licence,
-        'specialite' => $request->specialite,
+        'specialite' => "test",
 
         'moyenne_annee_1' => $request->moyenne_annee_1,
         'session_annee_1' => $request->session_annee_1,
